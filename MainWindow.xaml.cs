@@ -40,7 +40,7 @@ namespace WPFHeatMap
 			int y;
 			byte intense;
 
-			// Lets loop 500 times and create a random point each iteration
+			// Lets loop few times and create a random point each iteration
 			for (int i = 0; i < 1000; i++)
 			{
 				// Pick random locations and intensity
