@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows;
 
 namespace WPFHeatMap
@@ -8,8 +8,6 @@ namespace WPFHeatMap
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		HeatMap m_heat_map = new HeatMap();
-
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -32,9 +30,10 @@ namespace WPFHeatMap
 		/// </summary>
 		private void RenderContent()
 		{
-			m_heat_map.Clear();
+			cHeatMap.Clear();
 
 			Random rRand = new Random();
+
 			// Loop variables
 			int x;
 			int y;
@@ -49,11 +48,10 @@ namespace WPFHeatMap
 				intense = (byte)rRand.Next(0, 255);
 
 				// Add heat point to heat points list
-				m_heat_map.AddHeatPoint(new HeatPoint(x, y, intense));
+				cHeatMap.AddHeatPoint(new HeatPoint(x, y, intense));
 			}
 
-			m_heat_map.Render(cHeatMap);
-
+			cHeatMap.Render();
 		}
 	}
 }
